@@ -1,44 +1,69 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Food Festival</title>
-<link rel="stylesheet" href="css/stylesignup.css">
+ <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Food Festival</title>
+        <link rel="stylesheet" href="css/stylesignup.css">
+    </head>
+	<body>
+		<nav class="navbar">
+    <div class="logo">
+        <a href="index.html">Food Festival</a>
+    </div>
 
-</head>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="events.jsp">Festivals</a>
+        <a href="vendors.html">Vendors</a>
+        <a href="contact.html">Contact</a>
+        <a href="register.html" class="active">Register</a>
+    </div>
+</nav>
+<section>
+    <div class="signup-box">
+        <form action="confirmation.jsp" method="post">
+            <h2>Sign Up</h2>
 
-<body>
-	<div class="signup-box">
-	<h1> Sign Up </h1>
-	<h4> It's free and only takes a minute</h4>
-	<form action="confirmation.jsp" method="post">
-	<label for ="firstName">First Name</label>
-	<input id="firstName" name="firstName" type="text" placeholder="First Name">
-	
-	<label for ="lastName">Last Name</label>
-	<input id="lastName" name="lastName" type="text" placeholder="Last Name">
-	
-	<label for ="email">Email</label>
-	<input id="email" name="email" type="email" placeholder="abc@example.com">
-	
-	<label for ="password">Password</label>
-	<input id="password" type="password">
-	
-	<label for ="cPassword">Confirm Password</label>
-	<input id="cPassword" type="password">
-	
-	<input type="submit" value="Submit">
-	</form>
-	
-	<p>
-		By clicking the Sign Up button, you agree to our <br/>
-		<a href="#"> Terms and Conditions</a> and <a href="#">Policy Privacy</a>
-	</p>
-	</div>
-	
-	<p class="login-para">Already have an account? <a href="login.html">Login here</a> </p>
+            <div class="input-box">
+				<span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input id="firstName" name="firstName" type="text" required>
+                <label for="firstName">First Name</label>
+            </div>
+
+            <div class="input-box">
+				<span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input id="lastName" name="lastName" type="text" required>
+                <label for="lastName">Last Name</label>
+            </div>
+
+            <div class="input-box">
+				<span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input id="email" name="email" type="email" required>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="input-box">
+				<span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input id="password" name="password" type="password" required>
+                <label for="password">Password</label>
+            </div>
+
+            <div class="input-box">
+				<span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input id="cPassword" name="cPassword" type="password" required>
+                <label for="cPassword">Confirm Password</label>
+            </div>
+
+            <button type="submit">Sign Up</button>
+
+            <div class="login-link">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </form>
+    </div>
+</section>
+ <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="js/validation.js"></script>
 </body>
-</html>
+ </html>
