@@ -32,7 +32,7 @@ public class HomeServlet extends HttpServlet {
 
         request.setAttribute("date", date);
 
-        request.getRequestDispatcher("events.html")
+        request.getRequestDispatcher("events.jsp")
                .forward(request, response);
     }
 }

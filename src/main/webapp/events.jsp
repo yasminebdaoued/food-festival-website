@@ -14,27 +14,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Festivals | Food Festival Malaysia</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-dark text-white">
+    <title>Events | Food Festival Malaysia</title>
+    <link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
-<nav class="navbar navbar-dark bg-dark mb-5"><div class="container"><a class="navbar-brand" href="index.html">Food Festival</a></div></nav>
 
+<style>
+    /* Force cards into a vertical list/row layout */
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-hover-card {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    /* Hide the description by default */
+    .extra-info {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        opacity: 0;
+    }
+
+    /* Show on hover */
+    .info-hover-card:hover .extra-info {
+        max-height: 100px; /* Adjust based on text length */
+        opacity: 1;
+        margin-top: 10px;
+    }
+</style>
+
+  </head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="index.html">
+
+           Food Festival
+
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarContent">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="navbarContent">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="index.html">
+
+                       Home
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="events.jsp">
+
+                       Festivals
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="vendors.html">
+
+                       Vendors
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="contact.html">
+
+                       Contact
+
+                    </a>
+                </li>
+
+                <li class="nav-item ms-2">
+
+                    <a class="btn btn-outline-light"
+                       href="register.html">
+
+                       Register
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
 <div class="container">
     <% if (id == null) { %>
-        <!-- LIST VIEW -->
-        <h2 class="mb-5 text-center">Explore All Food Festivals</h2>
-        <div class="row g-4">
+       <h2 class="lead mt-3 mb-5 text-white text-center fw-bold">Explore All Food Festivals</h2>
+        
+        <div class="card-container">
             <% for(String[] e : events) { %>
-            <div class="col-md-6">
-                <div class="card bg-secondary text-white h-100">
-                    <img src="<%= e[4] %>" class="card-img-top" style="height:200px; object-fit:cover;">
-                    <div class="card-body">
+            <div class="card bg-secondary text-white info-hover-card p-3">
+                <div class="d-flex align-items-center">
+                    <img src="<%= e[4] %>" style="width:100px; height:100px; object-fit:cover;" class="rounded">
+                    <div class="ms-4">
                         <h4><%= e[1] %></h4>
-                        <p><%= e[2] %></p>
-                        <a href="festivals.jsp?id=<%= e[0] %>" class="btn btn-danger">View Details</a>
-                    </div>
+                        <p class="mb-0"><%= e[2] %></p>
+                    <a href="<%= e[0] %>.jsp" class="btn btn-danger btn-sm mt-2">View Details</a>
+                  </div>
+                </div>
+                <div class="extra-info">
+                    <p class="mt-2"><%= e[3] %></p>
                 </div>
             </div>
             <% } %>
@@ -57,5 +173,8 @@
         </div>
     <% } %>
 </div>
+
+
+
 </body>
 </html>
