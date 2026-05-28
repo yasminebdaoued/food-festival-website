@@ -18,6 +18,23 @@ rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
+<style>
+ .map-responsive {
+    overflow: hidden;
+    padding-bottom: 50%;
+    position: relative;
+    height: 0;
+    /* Add these two lines for rounded corners */
+    border-radius: 15px; 
+    border: 3px solid #dc3545; /* Optional: adds a nice border to highlight the map area */
+}
+.map-responsive iframe {
+    left: 0; top: 0; height: 100%; width: 100%; position: absolute;
+    /* Ensure the iframe itself also respects the rounding */
+    border-radius: 15px;
+}
+</style>
+
 </head>
 
 <body>
@@ -123,6 +140,10 @@ rel="stylesheet">
             Discover Sabah’s cultural cuisine,
             seafood specialties and international food exhibitions.
         </p>
+
+        <div class="map-responsive">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1304.180218238699!2d116.08381698022413!3d5.997090732982544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323b6a2c0ef74251%3A0x5cd5c62c8c550c5a!2sSabah%20International%20Convention%20Centre!5e0!3m2!1sen!2sus!4v1779989032818!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
 
         <a href="register.html"
            class="btn btn-danger mt-3">
